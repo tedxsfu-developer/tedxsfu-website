@@ -1,9 +1,10 @@
-node_modules/
-.cache/
+*/node_modules/
+*/.cache/
+*/.idea
 public
 
 
 *.webp
-/.DS_Store
+*/.DS_Store
 
 package-lock.json
