@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { navigate } from "gatsby-link";
-import VideoPlayer from "../components/videoPlayer/VideoPlayer";
+import VideoPlayer from "../2021/components/videoPlayer/VideoPlayer";
 
 const VideoPageTemplate = ({ pageContext }) => {
   const speaker = pageContext.speakerInfo;

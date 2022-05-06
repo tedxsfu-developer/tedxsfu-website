@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import LoadingSpinner from "./components/loadingSpinner/LoadingSpinner";
+import LoadingSpinner from "./common/components/loadingSpinner/LoadingSpinner";
 
 export default function HTML(props) {
   return (

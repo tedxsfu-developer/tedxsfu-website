@@ -1,6 +1,6 @@
 import React from "react";
-import PageWrapper from "./src/components/PageWrapper";
-import "./src/styles/global.css";
+import PageWrapper from "./src/2021/components/PageWrapper";
+import "./src/2021/styles/global.css";
 import scrollIntoView from "scroll-into-view-if-needed";
 
 export const wrapPageElement = ({ element, ...props }) => (

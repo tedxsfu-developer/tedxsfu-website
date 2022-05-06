@@ -23,7 +23,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 
 exports.createPages = async function ({ actions, graphql }) {
   // building the team bio page
-  require("./src/content/teams").forEach((currentTeamInfo, index) => {
+  require("./src/2021/content/teams").forEach((currentTeamInfo, index) => {
     actions.createPage({
       path: `/team/${currentTeamInfo.href}`,
       component: require.resolve(`./src/pages/team/teamBios.jsx`),
@@ -31,7 +31,7 @@ exports.createPages = async function ({ actions, graphql }) {
     });
   });
   // building video page
-  require("./src/content/speakers").forEach((currentSpeakerInfo, index) => {
+  require("./src/2021/content/speakers").forEach((currentSpeakerInfo, index) => {
     actions.createPage({
       path: `/${currentSpeakerInfo.slug}`,
       component: require.resolve(`./src/template/VideoPageTemplate.jsx`),

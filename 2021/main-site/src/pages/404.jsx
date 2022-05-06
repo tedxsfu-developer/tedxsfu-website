@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import Button from "../components/Button";
+import Button from "../2021/components/Button";
 
 // markup
 const NotFoundPage = () => {
