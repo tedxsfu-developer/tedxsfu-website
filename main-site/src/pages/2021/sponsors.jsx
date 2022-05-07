@@ -12,6 +12,7 @@ import {useRef} from "react";
 import useClickOutside from "../../2021/hooks/useClickOutside";
 import GrowingTextAnimation from "../../2021/components/animation/GrowingTextAnimation";
 import PageLayout from "../../2021/components/PageLayout";
+import {Helmet} from "react-helmet";
 
 const MOBILE_SPONSOR_ICON_HEIGHT = "6rem";
 
@@ -20,73 +21,79 @@ const SponsorshipPage = () => {
     const isMobile = !useMobileBreakpoint();
 
     return (
-        <PageLayout>
-            <div className="fixed left-0 top-0 bottom-0 right-0 mt-flowline-sm sm:mt-flowline">
-                {isMobile && <SponsorshipHeader isMobile/>}
-                <HorizontalScrollContainer>
-                    <div className="flex flex-col sm:flex-row flex-nowrap mx-document mt-1">
-                        {!isMobile && <SponsorshipHeader/>}
-                        <motion.div
-                            className="flex flex-row flex-nowrap"
-                            initial={{
-                                opacity: 0,
-                                x: 200,
-                            }}
-                            animate={{
-                                opacity: 1,
-                                x: 0,
-                                transition: {
-                                    ease: AnimationConfig.EASING,
-                                    duration: AnimationConfig.NORMAL,
-                                },
-                            }}
-                            exit={{
-                                opacity: 0,
-                                x: 0,
-                                transition: {
-                                    ease: AnimationConfig.EASING_INVERTED,
-                                    duration: AnimationConfig.NORMAL,
-                                },
-                            }}
-                        >
-                            <SponsorSectionPrimary
-                                sponsorList={sponsors.platinum}
-                                isMobile={isMobile}
-                            />
-                            <SponsorSectionSecondary
-                                label="Gold Sponsors"
-                                numbering="02"
-                                sponsorList={sponsors.gold}
-                                isMobile={isMobile}
-                            />
-                            <SponsorSectionSecondary
-                                label="Silver Sponsors"
-                                numbering="03"
-                                sponsorList={sponsors.silver}
-                                isMobile={isMobile}
-                            />
-                            <SponsorSectionSecondary
-                                label="City Sponsor"
-                                numbering="04"
-                                sponsorList={sponsors.city}
-                                isMobile={isMobile}
-                            />
-                            <SponsorSectionSecondary
-                                label="AV Sponsor"
-                                numbering="05"
-                                sponsorList={sponsors.avSponsors}
-                                isMobile={isMobile}
-                            />
-                            <SponsorSectionTertiary
-                                numbering="06"
-                                sponsorList={sponsors.inkind}
-                                isMobile={isMobile}
-                            />
-                        </motion.div>
-                    </div>
-                </HorizontalScrollContainer>
-            </div>
-        </PageLayout>
+        <React.Fragment>
+            <Helmet>
+                <title>Our Partners | TEDxSFU 2021</title>
+                <link rel="canonical" href="https://www.tedxsfu.com/2021/sponsors" />
+            </Helmet>
+            <PageLayout>
+                <div className="fixed left-0 top-0 bottom-0 right-0 mt-flowline-sm sm:mt-flowline">
+                    {isMobile && <SponsorshipHeader isMobile/>}
+                    <HorizontalScrollContainer>
+                        <div className="flex flex-col sm:flex-row flex-nowrap mx-document mt-1">
+                            {!isMobile && <SponsorshipHeader/>}
+                            <motion.div
+                                className="flex flex-row flex-nowrap"
+                                initial={{
+                                    opacity: 0,
+                                    x: 200,
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    x: 0,
+                                    transition: {
+                                        ease: AnimationConfig.EASING,
+                                        duration: AnimationConfig.NORMAL,
+                                    },
+                                }}
+                                exit={{
+                                    opacity: 0,
+                                    x: 0,
+                                    transition: {
+                                        ease: AnimationConfig.EASING_INVERTED,
+                                        duration: AnimationConfig.NORMAL,
+                                    },
+                                }}
+                            >
+                                <SponsorSectionPrimary
+                                    sponsorList={sponsors.platinum}
+                                    isMobile={isMobile}
+                                />
+                                <SponsorSectionSecondary
+                                    label="Gold Sponsors"
+                                    numbering="02"
+                                    sponsorList={sponsors.gold}
+                                    isMobile={isMobile}
+                                />
+                                <SponsorSectionSecondary
+                                    label="Silver Sponsors"
+                                    numbering="03"
+                                    sponsorList={sponsors.silver}
+                                    isMobile={isMobile}
+                                />
+                                <SponsorSectionSecondary
+                                    label="City Sponsor"
+                                    numbering="04"
+                                    sponsorList={sponsors.city}
+                                    isMobile={isMobile}
+                                />
+                                <SponsorSectionSecondary
+                                    label="AV Sponsor"
+                                    numbering="05"
+                                    sponsorList={sponsors.avSponsors}
+                                    isMobile={isMobile}
+                                />
+                                <SponsorSectionTertiary
+                                    numbering="06"
+                                    sponsorList={sponsors.inkind}
+                                    isMobile={isMobile}
+                                />
+                            </motion.div>
+                        </div>
+                    </HorizontalScrollContainer>
+                </div>
+            </PageLayout>
+        </React.Fragment>
     );
 };
 

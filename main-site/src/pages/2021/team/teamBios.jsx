@@ -14,6 +14,7 @@ import iconBack from "../../../../static/images/icons/icon-backward.svg";
 import GrowingTextAnimation from "../../../2021/components/animation/GrowingTextAnimation";
 import { SimpleDivAnimation } from "../../../2021/components/animation/SimpleTransitionAnimation";
 import teams from "../../../2021/content/teams";
+import {Helmet} from "react-helmet";
 
 function TeamBios({ location, history, pageContext }) {
   // Entries in the team.js object
@@ -23,34 +24,40 @@ function TeamBios({ location, history, pageContext }) {
   if (!teamInfo) return require.resolve("../../404");
 
   return (
-    <HorizontalScrollContainer>
-      <div className="h-2/5 flex relative top-1/4 transform lg:h-3/5 lg:translate-y-0">
-        <div className="w-full mr-36 pl-8 lg:pl-24 h-full flex flex-col justify-center">
-          <h1 className="text-4xl lg:text-5xl w-96 mb-8">
-            <GrowingTextAnimation>{teamInfo.team}</GrowingTextAnimation>
-          </h1>
-          <SimpleDivAnimation staggerIndex={teamInfo.members.length + 1}>
-            <p className="mb-8">{teamInfo.teamBio}</p>
-            <Button className="mr-auto" icon={iconBack} href="/2021/team" secondary>
-              Back
-            </Button>
-          </SimpleDivAnimation>
-        </div>
+      <React.Fragment>
+        <Helmet>
+          <title>{teamInfo.team} - Meet The Team | TEDxSFU 2021</title>
+          <link rel="canonical" href={`https://www.tedxsfu.com/2021/sponsors/${teamInfo.href}`} />
+        </Helmet>
+        <HorizontalScrollContainer>
+          <div className="h-2/5 flex relative top-1/4 transform lg:h-3/5 lg:translate-y-0">
+            <div className="w-full mr-36 pl-8 lg:pl-24 h-full flex flex-col justify-center">
+              <h1 className="text-4xl lg:text-5xl w-96 mb-8">
+                <GrowingTextAnimation>{teamInfo.team}</GrowingTextAnimation>
+              </h1>
+              <SimpleDivAnimation staggerIndex={teamInfo.members.length + 1}>
+                <p className="mb-8">{teamInfo.teamBio}</p>
+                <Button className="mr-auto" icon={iconBack} href="/2021/team" secondary>
+                  Back
+                </Button>
+              </SimpleDivAnimation>
+            </div>
 
-        <div className="flex h-full">
-          {teamInfo.members.map((member, i) => {
-            return (
-              <BioContainer
-                member={member}
-                i={i}
-                key={i}
-                total={teamInfo.members.length}
-              />
-            );
-          })}
-        </div>
-      </div>
-    </HorizontalScrollContainer>
+            <div className="flex h-full">
+              {teamInfo.members.map((member, i) => {
+                return (
+                    <BioContainer
+                        member={member}
+                        i={i}
+                        key={i}
+                        total={teamInfo.members.length}
+                    />
+                );
+              })}
+            </div>
+          </div>
+        </HorizontalScrollContainer>
+      </React.Fragment>
   );
 }
 

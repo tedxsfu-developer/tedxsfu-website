@@ -10,6 +10,7 @@ import speakers from "../../2021/content/speakers";
 import useDelayTrigger from "../../2021/hooks/useDelayTrigger";
 
 import scrollIntoView from "scroll-into-view-if-needed";
+import {Helmet} from "react-helmet";
 
 export const interactionModes = {
   IDLE: "IDLE", // not interacting
@@ -161,43 +162,49 @@ const IndexPage = () => {
   };
 
   return (
-    <PageLayout>
-      <Scroll
-        spySpeaker={spySpeaker}
-        setSpeaker={setSpeaker}
-        scroll={scroll}
-        onScroll={handleSpeakerScroll}
-        width={width}
-        setWidth={setWidth}
-        scrollRef={scrollRef}
-        onScrollBegin={handleScrollBegin}
-        onScrollEnd={handleScrollEnd}
-        onScrollChange={handleScrollChange}
-        interactionMode={interactionMode}
-        forceModeChange={forceModeChange}
-      />
-      {/* debug */}
-      {/* <div className="fixed top-20 left-20 z-50">{interactionMode}</div> */}
-      {isFullNav ? (
-        <Navigation
-          spySpeaker={spySpeaker}
-          setSpeaker={setSpeaker}
-          scroll={scroll}
-          width={width}
-        />
-      ) : (
-        <SpeakerMobileNav
-          navRef={navRef}
-          onSelectSpeaker={handleSelectSpeakerMobile}
-          spySpeaker={spySpeaker}
-          onScrubBegin={handleScrubBegin}
-          onScrubEnd={handleScrubEnd}
-          onScrubChange={handleScrubChange}
-          interactionMode={interactionMode}
-          forceModeChange={forceModeChange}
-        />
-      )}
-    </PageLayout>
+      <React.Fragment>
+        <Helmet>
+          <title>Speakers | TEDxSFU 2021</title>
+          <link rel="canonical" href="https://www.tedxsfu.com/2021" />
+        </Helmet>
+        <PageLayout>
+          <Scroll
+              spySpeaker={spySpeaker}
+              setSpeaker={setSpeaker}
+              scroll={scroll}
+              onScroll={handleSpeakerScroll}
+              width={width}
+              setWidth={setWidth}
+              scrollRef={scrollRef}
+              onScrollBegin={handleScrollBegin}
+              onScrollEnd={handleScrollEnd}
+              onScrollChange={handleScrollChange}
+              interactionMode={interactionMode}
+              forceModeChange={forceModeChange}
+          />
+          {/* debug */}
+          {/* <div className="fixed top-20 left-20 z-50">{interactionMode}</div> */}
+          {isFullNav ? (
+              <Navigation
+                  spySpeaker={spySpeaker}
+                  setSpeaker={setSpeaker}
+                  scroll={scroll}
+                  width={width}
+              />
+          ) : (
+              <SpeakerMobileNav
+                  navRef={navRef}
+                  onSelectSpeaker={handleSelectSpeakerMobile}
+                  spySpeaker={spySpeaker}
+                  onScrubBegin={handleScrubBegin}
+                  onScrubEnd={handleScrubEnd}
+                  onScrubChange={handleScrubChange}
+                  interactionMode={interactionMode}
+                  forceModeChange={forceModeChange}
+              />
+          )}
+        </PageLayout>
+      </React.Fragment>
   );
 };
 
