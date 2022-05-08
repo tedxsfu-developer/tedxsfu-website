@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../../2021/components/Button";
 
 import backIcon from "../../../static/images/icons/icon-backward.svg";
-import LoadingSpinner from "../../common/components/LoadingSpinner/LoadingSpinner";
+import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner";
 
 //@ts-check
 const ComponentTesting = () => {

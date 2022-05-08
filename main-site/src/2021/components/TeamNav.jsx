@@ -7,7 +7,7 @@ import useDelayTrigger from "../hooks/useDelayTrigger";
 
 //  for motion
 import { motion } from "framer-motion";
-import GrowingAnimation from "./animation/GrowingTextAnimation";
+import GrowingAnimation from "../../common/components/animation/GrowingTextAnimation";
 import { AnimationConfig } from "../AnimationConfig";
 import scrollIntoView from "scroll-into-view-if-needed";
 

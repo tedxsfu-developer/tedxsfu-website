@@ -15,13 +15,12 @@ import PLAY_BUTTON from "../../../static/images/icons/icon-play.svg";
 
 // import { motion } from "framer-motion";
 import { AnimationConfig } from "../AnimationConfig";
-import GrowingTextAnimation from "./animation/GrowingTextAnimation";
-import { SimpleDivAnimation } from "./animation/SimpleTransitionAnimation";
+import GrowingTextAnimation from "../../common/components/animation/GrowingTextAnimation";
+import { SimpleDivAnimation } from "../../common/components/animation/SimpleTransitionAnimation";
 
 function ScrollItem({ speaker, width }) {
   return (
     <div
-      // id={`speaker-${speaker.id}`}
       id={`${speaker.slug}`}
       className={`scroll-item relative h-full`}
       style={{

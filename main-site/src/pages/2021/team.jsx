@@ -3,7 +3,7 @@ import React, {useState, useRef, useEffect} from "react";
 import TeamScroll from "../../2021/components/TeamScroll";
 import TeamNav from "../../2021/components/TeamNav";
 import PageLayout from "../../2021/components/PageLayout";
-import {Helmet} from "react-helmet";
+import PageHelmet from "../../common/components/PageHelmet";
 
 const TeamPage = () => {
     const [scrollWidth, setScrollWidth] = useState();
@@ -23,10 +23,10 @@ const TeamPage = () => {
 
     return (
         <React.Fragment>
-            <Helmet>
-                <title>Meet The Team | TEDxSFU 2021</title>
-                <link rel="canonical" href="https://www.tedxsfu.com/2021/team" />
-            </Helmet>
+            <PageHelmet
+                title="Meet The Team | TEDxSFU 2021"
+                canonical="https://www.tedxsfu.com/2021/team"
+            />
             <PageLayout>
                 <div className="bg-black fixed left-0 right-0 top-0 bottom-0 flex flex-col">
                     <TeamNav

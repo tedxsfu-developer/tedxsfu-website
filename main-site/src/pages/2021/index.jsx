@@ -10,7 +10,7 @@ import speakers from "../../2021/content/speakers";
 import useDelayTrigger from "../../2021/hooks/useDelayTrigger";
 
 import scrollIntoView from "scroll-into-view-if-needed";
-import {Helmet} from "react-helmet";
+import PageHelmet from "../../common/components/PageHelmet";
 
 export const interactionModes = {
   IDLE: "IDLE", // not interacting
@@ -163,10 +163,10 @@ const IndexPage = () => {
 
   return (
       <React.Fragment>
-        <Helmet>
-          <title>Speakers | TEDxSFU 2021</title>
-          <link rel="canonical" href="https://www.tedxsfu.com/2021" />
-        </Helmet>
+        <PageHelmet
+            title="Speakers | TEDxSFU 2021"
+            canonical="https://www.tedxsfu.com/2021"
+        />
         <PageLayout>
           <Scroll
               spySpeaker={spySpeaker}

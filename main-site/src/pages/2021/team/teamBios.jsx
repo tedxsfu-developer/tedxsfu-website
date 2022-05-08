@@ -1,20 +1,15 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 import HorizontalScrollContainer from "../../../2021/components/HorizontalScrollContainer";
 import Button from "../../../2021/components/Button";
-import arrow from "../../../static/images/upArrow.svg";
 import linkedIn from "../../../static/images/icons/linkedIn.svg";
 import instagram from "../../../static/images/icons/instagram.svg";
 import facebook from "../../../static/images/icons/facebook.svg";
 
-import Image from "../../../2021/components/Image";
-
 import iconBack from "../../../../static/images/icons/icon-backward.svg";
-import GrowingTextAnimation from "../../../2021/components/animation/GrowingTextAnimation";
-import { SimpleDivAnimation } from "../../../2021/components/animation/SimpleTransitionAnimation";
-import teams from "../../../2021/content/teams";
-import {Helmet} from "react-helmet";
+import GrowingTextAnimation from "../../../common/components/animation/GrowingTextAnimation";
+import { SimpleDivAnimation } from "../../../common/components/animation/SimpleTransitionAnimation";
+import PageHelmet from "../../../common/components/PageHelmet";
 
 function TeamBios({ location, history, pageContext }) {
   // Entries in the team.js object
@@ -25,10 +20,10 @@ function TeamBios({ location, history, pageContext }) {
 
   return (
       <React.Fragment>
-        <Helmet>
-          <title>{teamInfo.team} - Meet The Team | TEDxSFU 2021</title>
-          <link rel="canonical" href={`https://www.tedxsfu.com/2021/sponsors/${teamInfo.href}`} />
-        </Helmet>
+        <PageHelmet
+            title={`${teamInfo.team} - Meet The Team | TEDxSFU 2021`}
+            canonical={`https://www.tedxsfu.com/2021/sponsors/${teamInfo.href}`}
+        />
         <HorizontalScrollContainer>
           <div className="h-2/5 flex relative top-1/4 transform lg:h-3/5 lg:translate-y-0">
             <div className="w-full mr-36 pl-8 lg:pl-24 h-full flex flex-col justify-center">

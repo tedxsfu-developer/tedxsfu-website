@@ -10,9 +10,9 @@ import {AnimationConfig} from "../../2021/AnimationConfig";
 import {useMobileBreakpoint} from "../../2021/hooks/useBreakpoint";
 import {useRef} from "react";
 import useClickOutside from "../../2021/hooks/useClickOutside";
-import GrowingTextAnimation from "../../2021/components/animation/GrowingTextAnimation";
+import GrowingTextAnimation from "../../common/components/animation/GrowingTextAnimation";
 import PageLayout from "../../2021/components/PageLayout";
-import {Helmet} from "react-helmet";
+import PageHelmet from "../../common/components/PageHelmet";
 
 const MOBILE_SPONSOR_ICON_HEIGHT = "6rem";
 
@@ -22,10 +22,10 @@ const SponsorshipPage = () => {
 
     return (
         <React.Fragment>
-            <Helmet>
-                <title>Our Partners | TEDxSFU 2021</title>
-                <link rel="canonical" href="https://www.tedxsfu.com/2021/sponsors" />
-            </Helmet>
+            <PageHelmet
+                title="Our Partners | TEDxSFU 2021"
+                canonical="https://www.tedxsfu.com/2021/sponsors"
+            />
             <PageLayout>
                 <div className="fixed left-0 top-0 bottom-0 right-0 mt-flowline-sm sm:mt-flowline">
                     {isMobile && <SponsorshipHeader isMobile/>}

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { AnimationConfig } from "../../AnimationConfig";
+import { AnimationConfig } from "../../../2021/AnimationConfig";
 
 const STAGGER_DELAY = 0.1;
 

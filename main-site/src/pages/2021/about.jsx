@@ -5,15 +5,15 @@ import HorizontalScrollContainer from "../../2021/components/HorizontalScrollCon
 import Image from "../../2021/components/Image";
 
 // import assets
-import GrowingTextAnimation from "../../2021/components/animation/GrowingTextAnimation";
+import GrowingTextAnimation from "../../common/components/animation/GrowingTextAnimation";
 import {AnimationConfig} from "../../2021/AnimationConfig";
 import {
     SimpleDivAnimation,
     SimpleSectionAnimation,
-} from "../../2021/components/animation/SimpleTransitionAnimation";
+} from "../../common/components/animation/SimpleTransitionAnimation";
 import {breakpoints} from "../../2021/hooks/useBreakpoint";
 import PageLayout from "../../2021/components/PageLayout";
-import {Helmet} from "react-helmet";
+import PageHelmet from "../../common/components/PageHelmet";
 
 const About = () => {
     const scrollContainerRef = useRef();
@@ -74,10 +74,10 @@ const About = () => {
 
     return (
         <React.Fragment>
-            <Helmet>
-                <title>About | TEDxSFU 2021</title>
-                <link rel="canonical" href="https://www.tedxsfu.com/2021/about" />
-            </Helmet>
+            <PageHelmet
+                title="About | TEDxSFU 2021"
+                canonical="https://www.tedxsfu.com/2021/about"
+            />
             <PageLayout>
                 <HorizontalScrollContainer ref={scrollContainerRef} className="h-full">
                     <div className="flex flex-nowrap fluid-from-screen-sm fluid-to-screen-md w-screen h-full">
