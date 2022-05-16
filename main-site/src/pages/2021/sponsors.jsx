@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {motion, AnimatePresence} from "framer-motion";
+import React, {useRef, useState} from "react";
+import {AnimatePresence, motion} from "framer-motion";
 import HorizontalScrollContainer from "../../2021/components/HorizontalScrollContainer";
 import sponsors from "../../2021/content/sponsors";
 import Button from "../../2021/components/Button";
@@ -8,11 +8,10 @@ import SocialButton from "../../2021/components/SocialButton";
 import CloseIcon from "../../static/images/icons/close.svg";
 import {AnimationConfig} from "../../2021/AnimationConfig";
 import {useMobileBreakpoint} from "../../2021/hooks/useBreakpoint";
-import {useRef} from "react";
 import useClickOutside from "../../2021/hooks/useClickOutside";
-import GrowingTextAnimation from "../../common/components/animation/GrowingTextAnimation";
+import GrowingTextAnimation from "../../shared/components/animation/GrowingTextAnimation";
 import PageLayout from "../../2021/components/PageLayout";
-import PageHelmet from "../../common/components/PageHelmet";
+import PageHelmet from "../../shared/components/PageHelmet";
 
 const MOBILE_SPONSOR_ICON_HEIGHT = "6rem";
 
@@ -25,6 +24,7 @@ const SponsorshipPage = () => {
             <PageHelmet
                 title="Our Partners | TEDxSFU 2021"
                 canonical="https://www.tedxsfu.com/2021/sponsors"
+                description="TEDxSFU partnered with these amazing organizations and businesses to make TEDxSFU Bloom happen this year."
             />
             <PageLayout>
                 <div className="fixed left-0 top-0 bottom-0 right-0 mt-flowline-sm sm:mt-flowline">

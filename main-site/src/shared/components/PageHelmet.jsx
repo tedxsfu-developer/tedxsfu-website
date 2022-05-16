@@ -1,13 +1,14 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import {Helmet} from "react-helmet";
 
 const PageHelmet = (props) => {
-    return(
+    return (
         <Helmet htmlAttributes={{
             lang: 'en',
         }}>
+            <meta name="description" content={props.description}></meta>
             <title>{props.title}</title>
-            <link rel="canonical" href={props.canonical} />
+            <link rel="canonical" href={props.canonical}/>
         </Helmet>
     );
 }

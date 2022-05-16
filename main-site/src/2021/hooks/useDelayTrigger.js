@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import {useRef} from "react";
 
 // usage
 /**
@@ -14,11 +14,11 @@ import { useRef } from "react";
  * @returns
  */
 export default function useDelayTrigger(callback, defaultExpireTime = 1000) {
-  const timer = useRef();
-  const fire = (customExpireTime) => {
-    const expTime = customExpireTime || defaultExpireTime;
-    if (timer.current) clearTimeout(timer.current);
-    timer.current = setTimeout(callback, expTime);
-  };
-  return fire;
+    const timer = useRef();
+    const fire = (customExpireTime) => {
+        const expTime = customExpireTime || defaultExpireTime;
+        if (timer.current) clearTimeout(timer.current);
+        timer.current = setTimeout(callback, expTime);
+    };
+    return fire;
 }

@@ -203,7 +203,7 @@ const sponsors = {
             about: "Check out their website to learn more.",
             website: "https://www.mcdonalds.com/ca/en-ca.html"
         },
- 
+
     ],
 };
 

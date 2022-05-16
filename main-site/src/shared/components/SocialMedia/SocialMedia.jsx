@@ -5,7 +5,7 @@ import SocialMedia from "../../content/socialMedia";
 import LinkedImageIcon from "../LinkedImageIcon/LinkedImageIcon";
 
 const SocialMediaLink = () => {
-    return(
+    return (
         <div className="social-group flex">
             {SocialMedia.map(item =>
                 <LinkedImageIcon

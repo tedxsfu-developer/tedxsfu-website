@@ -1,10 +1,5 @@
 const SocialMedia = [
     {
-        url: "https://ca.linkedin.com/company/tedxsfu",
-        name: "LinkedIn",
-        logo: "/images/icons/socialMedia/linkedIn.svg",
-    },
-    {
         url: "https://www.instagram.com/tedxsfu/",
         name: "Instagram",
         logo: "/images/icons/socialMedia/instagram.svg",
@@ -18,6 +13,11 @@ const SocialMedia = [
         url: "https://twitter.com/TEDxSFU",
         name: "Twitter",
         logo: "/images/icons/socialMedia/twitter.svg",
+    },
+    {
+        url: "https://ca.linkedin.com/company/tedxsfu",
+        name: "LinkedIn",
+        logo: "/images/icons/socialMedia/linkedIn.svg",
     },
 ];
 

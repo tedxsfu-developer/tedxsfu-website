@@ -1,19 +1,16 @@
-import React, {useRef, useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {motion, useElementScroll, useTransform} from "framer-motion";
 import HorizontalScrollContainer from "../../2021/components/HorizontalScrollContainer";
 
 import Image from "../../2021/components/Image";
 
 // import assets
-import GrowingTextAnimation from "../../common/components/animation/GrowingTextAnimation";
+import GrowingTextAnimation from "../../shared/components/animation/GrowingTextAnimation";
 import {AnimationConfig} from "../../2021/AnimationConfig";
-import {
-    SimpleDivAnimation,
-    SimpleSectionAnimation,
-} from "../../common/components/animation/SimpleTransitionAnimation";
+import {SimpleDivAnimation, SimpleSectionAnimation,} from "../../shared/components/animation/SimpleTransitionAnimation";
 import {breakpoints} from "../../2021/hooks/useBreakpoint";
 import PageLayout from "../../2021/components/PageLayout";
-import PageHelmet from "../../common/components/PageHelmet";
+import PageHelmet from "../../shared/components/PageHelmet";
 
 const About = () => {
     const scrollContainerRef = useRef();
@@ -77,6 +74,7 @@ const About = () => {
             <PageHelmet
                 title="About | TEDxSFU 2021"
                 canonical="https://www.tedxsfu.com/2021/about"
+                description="TEDxSFU Bloom embraces the struggles we all face on our journey to grow."
             />
             <PageLayout>
                 <HorizontalScrollContainer ref={scrollContainerRef} className="h-full">
@@ -122,7 +120,8 @@ const About = () => {
                             {/* landing video container */}
                             <div className="absolute w-full h-full left-0 top-0 right-0 bottom-0 z-0">
                                 {/* container that control the video sizes using padding and margins */}
-                                <div className="flex w-full h-full mx-document pb-28 pt-48 pl-32 md:pl-axis 2xl:pr-axis">
+                                <div
+                                    className="flex w-full h-full mx-document pb-28 pt-48 pl-32 md:pl-axis 2xl:pr-axis">
                                     <motion.video
                                         onLoadedMetadata={() => setIsVideoReady(true)}
                                         ref={videoRef}
@@ -184,7 +183,8 @@ const About = () => {
                                 beginnings when all you see and feel is ambiguity.
                             </p>
                             {/* Call out box */}
-                            <blockquote className="text-3xl mt-8 w-short-line opacity-50 font-light hanging-punctuation">
+                            <blockquote
+                                className="text-3xl mt-8 w-short-line opacity-50 font-light hanging-punctuation">
                                 “Bloom means to flourish, to mature into achievement of one’s
                                 potential.”
                             </blockquote>

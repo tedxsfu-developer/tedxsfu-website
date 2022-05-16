@@ -8,6 +8,13 @@ body {
     font-size: 1rem;
 }
 
+.reflection-text {
+    text-transform: uppercase;
+    background: linear-gradient(to right top, white, #e61b2e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 a.simple-link {
     color: #e61b2e;
     animation: text-blinking 500ms alternate infinite ease-in-out;
@@ -18,23 +25,13 @@ a.simple-link:hover, a.simple-link:focus {
     text-underline-offset: 0.5rem;
 }
 
-a.image-link .image-icon{
-    transition: all 500ms ease-in-out;
-}
-
-.image-link:hover .image-icon, .image-link:focus .image-icon {
-    animation: icon-blinking 1000ms alternate infinite ease-in-out;
+a.image-link:hover .image-icon {
+    filter: invert(32%) sepia(91%) saturate(6219%) hue-rotate(344deg) brightness(90%) contrast(100%);
 }
 
 @keyframes text-blinking {
     100% {
         color: white;
-    }
-}
-
-@keyframes icon-blinking {
-    100% {
-        filter: invert(32%) sepia(91%) saturate(6219%) hue-rotate(344deg) brightness(90%) contrast(100%);
     }
 }
 
@@ -59,7 +56,7 @@ main-font {
     font-weight: bold;
 }
 
-@media(min-width: 20rem) {
+@media (min-width: 20rem) {
     .main-heading {
         font-size: 1.3rem;
         margin: 0 1rem;
@@ -90,7 +87,7 @@ main-font {
     }
 }
 
-@media(min-width: 31.25rem) {
+@media (min-width: 31.25rem) {
     .full-view footer {
         display: flex;
         justify-content: space-between;
@@ -105,7 +102,7 @@ main-font {
 }
 
 
-@media(min-width: 42rem) {
+@media (min-width: 42rem) {
     .main-heading {
         font-size: 1.75rem;
         margin: 0 1rem;
@@ -129,7 +126,7 @@ main-font {
     }
 }
 
-@media(min-width: 62.5rem) {
+@media (min-width: 62.5rem) {
     .main-heading {
         font-size: 2.5rem;
         margin: 0 1rem;
@@ -137,7 +134,7 @@ main-font {
 
     .secondary-heading {
         font-size: 1.25rem;
-        margin: 0.25rem 1.25rem;
+        margin: 0.25rem 1.25rem 0 1.25rem;
     }
 
     .full-view footer {
@@ -162,15 +159,13 @@ main-font {
     }
 }
 
-@media(min-width: 80rem) {
+@media (min-width: 80rem) {
     .main-heading {
         font-size: 3.5rem;
-        margin: 0 1rem;
     }
 
     .secondary-heading {
         font-size: 1.75rem;
-        margin: 0.25rem 1.25rem;
     }
 
     .full-view footer {

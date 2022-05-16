@@ -3,7 +3,7 @@ import Image from "../../2021/components/Image";
 import React from "react";
 
 const MainLogo = () => {
-    return(
+    return (
         <Link to="/">
             <Image
                 className="site-logo"

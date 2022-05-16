@@ -1,15 +1,15 @@
 import React from "react";
-import PageWrapper from "./src/2021/components/PageWrapper";
+import PageWrapper from "./src/shared/components/PageWrapper";
 import "./src/2021/styles/global.css";
 import "./src/2022/styles/main.css";
 import scrollIntoView from "scroll-into-view-if-needed";
 
-export const wrapPageElement = ({ element, ...props }) => (
-  <PageWrapper {...props}>{element}</PageWrapper>
+export const wrapPageElement = ({element, ...props}) => (
+    <PageWrapper {...props}>{element}</PageWrapper>
 );
 
-export function onRouteUpdate({ location }) {
-  return true;
+export function onRouteUpdate({location}) {
+    return true;
 }
 
 /**
@@ -24,33 +24,33 @@ let isShowingSpinner = false;
 let isLoaded = false;
 
 function shouldShowSpinner() {
-  return Date.now() - initialLoadTime > SPINNER_TOLERANCE;
+    return Date.now() - initialLoadTime > SPINNER_TOLERANCE;
 }
 
 function attemptShowSpinner() {
-  if (isShowingSpinner || isLoaded) return;
+    if (isShowingSpinner || isLoaded) return;
 
-  if (shouldShowSpinner()) {
-    const spinner = document.querySelector("#__loading-spinner");
-    isShowingSpinner = true;
-    spinner.classList.add("loading-spinner--loading");
-  }
+    if (shouldShowSpinner()) {
+        const spinner = document.querySelector("#__loading-spinner");
+        isShowingSpinner = true;
+        spinner.classList.add("loading-spinner--loading");
+    }
 
-  requestAnimationFrame(attemptShowSpinner);
+    requestAnimationFrame(attemptShowSpinner);
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  requestAnimationFrame(attemptShowSpinner);
+    requestAnimationFrame(attemptShowSpinner);
 });
 
 export function onInitialClientRender() {
-  const spinner = document.querySelector("#__loading-spinner");
-  spinner.classList.remove("loading-spinner--loading");
-  isShowingSpinner = false;
-  isLoaded = true;
-  // window.addEventListener("load", () => {});
+    const spinner = document.querySelector("#__loading-spinner");
+    spinner.classList.remove("loading-spinner--loading");
+    isShowingSpinner = false;
+    isLoaded = true;
+    // window.addEventListener("load", () => {});
 
-  // setTimeout(function () {
-  //   spinner.classList.add("loading-spinner--loading");
-  // }, REMOVE_DELAY);
+    // setTimeout(function () {
+    //   spinner.classList.add("loading-spinner--loading");
+    // }, REMOVE_DELAY);
 }
