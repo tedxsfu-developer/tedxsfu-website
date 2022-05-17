@@ -24,14 +24,9 @@ const IndexPage = () => {
                         </h1>
                     </SimpleDivAnimation>
                     <h2 className="secondary-heading font-light main-font">
-                        <GrowingTextAnimation fontWeight={300}>
-                            Stay tuned and check out
+                        <GrowingTextAnimation>
+                            Check out our social media for more information about this year conference.
                         </GrowingTextAnimation>
-                        <Link to={`/2021`} className="simple-link">
-                            <GrowingTextAnimation fontWeight={300}>
-                                TEDxSFU 2021 Conference
-                            </GrowingTextAnimation>
-                        </Link>
                     </h2>
                 </div>
                 <footer>

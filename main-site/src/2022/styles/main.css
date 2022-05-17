@@ -15,6 +15,15 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+.reflection-text::selection {
+    /*background: linear-gradient(to right top, black, #e61b2e);*/
+    /*-webkit-background-clip: text;*/
+    /*-webkit-text-fill-color: transparent;*/
+    background: linear-gradient(to right top, black, #e61b2e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 a.simple-link {
     color: #e61b2e;
     animation: text-blinking 500ms alternate infinite ease-in-out;
