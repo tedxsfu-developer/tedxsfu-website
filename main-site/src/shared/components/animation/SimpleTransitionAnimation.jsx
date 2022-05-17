@@ -41,7 +41,7 @@ export function SimpleDivAnimation({children, staggerIndex = 0, ...props}) {
     );
 }
 
-export function SimpleSectionAnimation({ children, staggerIndex = 0, ...props }) {
+export function SimpleSectionAnimation({children, staggerIndex = 0, ...props}) {
     return (
         <motion.section
             {...props}

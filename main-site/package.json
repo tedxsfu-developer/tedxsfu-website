@@ -16,14 +16,14 @@
   "dependencies": {
     "@borisk47/tailwindcss-fluidify": "^0.1.4",
     "@loadable/component": "^5.15.0",
-    "framer-motion": "^4.1.17",
+    "framer-motion": "^6.3.3",
     "gatsby": "^4.14.1",
-    "gatsby-plugin-image": "^1.12.0",
+    "gatsby-plugin-image": "^2.14.1",
     "gatsby-plugin-react-helmet": "^5.14.0",
-    "gatsby-plugin-sharp": "^3.12.0",
+    "gatsby-plugin-sharp": "^4.14.1",
     "gatsby-plugin-smoothscroll": "^1.2.0",
-    "gatsby-source-filesystem": "^3.12.0",
-    "gatsby-transformer-sharp": "^3.12.0",
+    "gatsby-source-filesystem": "^4.14.0",
+    "gatsby-transformer-sharp": "^4.14.0",
     "hls.js": "^1.0.10",
     "install": "^0.13.0",
     "npm": "^7.21.0",
@@ -38,9 +38,9 @@
   "devDependencies": {
     "@tailwindcss/jit": "^0.1.18",
     "autoprefixer": "^10.3.1",
-    "gatsby-plugin-postcss": "^4.10.0",
+    "gatsby-plugin-postcss": "^5.14.0",
     "postcss": "^8.3.6",
-    "tailwindcss": "^2.2.7",
+    "tailwindcss": "^3.0.24",
     "tailwindcss-fluid": "^0.2.0"
   }
 }
