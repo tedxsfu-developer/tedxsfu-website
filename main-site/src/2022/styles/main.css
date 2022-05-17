@@ -34,8 +34,12 @@ a.simple-link:hover, a.simple-link:focus {
     text-underline-offset: 0.5rem;
 }
 
-a.image-link:hover .image-icon {
+a.image-link:hover .image-icon, a.image-link:focus .image-icon {
     filter: invert(32%) sepia(91%) saturate(6219%) hue-rotate(344deg) brightness(90%) contrast(100%);
+}
+
+a.image-link:active .image-icon {
+    filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(281deg) brightness(101%) contrast(106%);
 }
 
 @keyframes text-blinking {
@@ -57,7 +61,7 @@ a.image-link:hover .image-icon {
     text-align: center;
 }
 
-main-font {
+.main-font {
     font-family: NeueHaas, sans-serif;
 }
 
@@ -78,7 +82,7 @@ main-font {
 
     .full-view footer {
         padding: 0 1rem 2rem 1rem;
-        diplay: block;
+        display: block;
     }
 
     .full-view footer section.social-media {
@@ -92,7 +96,12 @@ main-font {
     }
 
     .social-group.flex .flex-item {
-        margin-right: 0.5rem;
+        margin-right: 0.75rem;
+    }
+
+    a.image-link .image-icon {
+        width: 1.5rem;
+        height: 1.5rem;
     }
 }
 
@@ -131,7 +140,7 @@ main-font {
     }
 
     .social-group.flex .flex-item {
-        margin-right: 0.5rem;
+        margin-right: 1rem;
     }
 }
 
@@ -159,12 +168,12 @@ main-font {
     }
 
     .social-group.flex .flex-item {
-        margin-right: 0.5rem;
+        margin-right: 1rem;
     }
 
     a.image-link .image-icon {
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 2rem;
+        height: 2rem;
     }
 }
 
